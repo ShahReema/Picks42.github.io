@@ -11,11 +11,40 @@ and open the template in the editor.
 $font_normal: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $font_color:#666;
 $body_background:#fff;
+
+//navbar
 $navbar_background:#233445;
 $navbar_font_color:#fff;
 $navbar_active: #f05d7c;
 $navbar_hover: #f05d7c;
 $drop_down_color:#325273;
+
+//buttons
+$btn_primary_font_color:#fff;
+$btn_primary_background_color:#337a9e;
+$btn_primary_hover_color:#4f6b79;
+$btn_danger_font_color:#fff;
+$btn_danger_background_color:#f13058;
+$btn_danger_hover_color:#f05d7c;
+$btn_warning_font_color:#fff;
+$btn_warning_background_color:#f5a027;
+$btn_warning_hover_color:#e88800;
+$btn_success_font_color:#fff;
+$btn_success_background_color:#26a69a;
+$btn_success_hover_color:#14c5b4;
+$btn_info_font_color:#fff;
+$btn_info_background_color:#46b8da;
+$btn_info_hover_color:#00acde;
+$btn_plus_font_color:#fff;
+$btn_plus_background_color:#F44336;
+$btn_plus_hover_color:#ff1100;
+
+//table
+$thead_background:#37474f;
+$th_font_color:#fff;
+$row_background_color:#f5f5f5;
+$row_hover_color:#f2f2f2;
+$table_border_color:#ddd;
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -886,6 +915,10 @@ img {
     position: fixed;
 }
 
+
+//drop_down
+
+
 //navbar
 nav{
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
@@ -893,7 +926,6 @@ nav{
     @media(max-width:1024px){
         position:fixed;
         width:100%;
-
     }
 }
 .nav_fixed{
@@ -902,13 +934,10 @@ nav{
     z-index: 1;
 }
 .menu_wrapper{
-
     @media(min-width:1025px){
         display:table;
         width:100%;    
     }
-    /*padding:10px 0;*/ 
-
     .brand_name{
         color:$navbar_font_color;
         @media(min-width:1025px){
@@ -916,8 +945,8 @@ nav{
             width:10%;
         }
         @media(max-width:1024px){
-            text-align:left;
             padding:10px 25px;
+            float:left;
         }
         vertical-align: middle;
         padding:0 15px;
@@ -930,9 +959,9 @@ nav{
         }
     }
     .close_btn{
-        position: absolute;
+        position: relative;
+        float:right;
         right: 15px;
-        top: 10px;
         font-size: 50px;
         color: $navbar_font_color;
         @media(min-width:1025px){
@@ -947,6 +976,7 @@ nav{
         @media(max-width:1024px){
             display: none;
             padding:0; 
+            clear:both;
         }
         vertical-align: middle;
         padding:0 15px;                       
@@ -980,14 +1010,15 @@ nav{
                     background-color: $navbar_hover;
                 }
                 a{
-
                     text-decoration: none;
                     color:$navbar_font_color;
                     @media(max-width:1240px){
                         font-size:12px;
                     }
                 }
-                .drop_down_hover,.drop_down_click{
+                
+            }
+            .drop_down_hover,.drop_down_click{
                     @media(min-width:1025px){
                         position: absolute;
                         width:150px;
@@ -1010,7 +1041,6 @@ nav{
                         }
                     }
                 }
-            }
             .has_dropdown{
                 cursor: pointer;
                 i{
@@ -1024,4 +1054,211 @@ nav{
     }
 }
 
-//buttons
+.btn{
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    vertical-align: middle;
+    z-index: 1;
+    border-radius: 1px;
+    will-change: opacity, transform;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    outline: none;
+    border: 1px solid;
+    white-space: nowrap;
+    &:hover{
+        box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18),0 4px 15px 0 rgba(0,0,0,0.15);
+    }
+}
+.btn-primary{
+    background-color: $btn_primary_background_color;
+    border-color:  $btn_primary_background_color;
+    color: $btn_primary_font_color;
+    border-radius: 1px;
+    &:hover{
+        background-color: $btn_primary_hover_color;
+        border-color: $btn_primary_hover_color;
+    }
+}
+.btn-danger{
+    background-color: $btn_danger_background_color;
+    border-color:  $btn_danger_background_color;
+    color: $btn_danger_font_color;
+    border-radius: 1px;
+    &:hover{
+        background-color: $btn_danger_hover_color;
+        border-color: $btn_danger_hover_color;
+    }
+}
+.btn-warning{
+    background-color: $btn_warning_background_color;
+    border-color:  $btn_warning_background_color;
+    color: $btn_warning_font_color;
+    border-radius: 1px;
+    &:hover{
+        background-color: $btn_warning_hover_color;
+        border-color: $btn_warning_hover_color;
+    }
+}
+.btn-success{
+    background-color: $btn_success_background_color;
+    border-color:   $btn_success_background_color;
+    color: $btn_success_font_color;
+    border-radius: 1px;
+    &:hover{
+        background-color: $btn_success_hover_color;
+        border-color: $btn_success_hover_color;
+    }
+}
+.btn-info{
+    background-color: $btn_info_background_color;
+    border-color: $btn_info_background_color;
+    color: $btn_info_font_color;
+    border-radius: 1px;
+    &:hover{
+        background-color: $btn_info_hover_color;
+        border-color: $btn_info_hover_color;
+    }
+}
+.btn-disabled{
+    cursor: not-allowed;
+    filter: alpha(opacity=65);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    opacity: .5;
+}
+.btn-plus{
+    border-radius: 100%;
+    background-color:$btn_plus_background_color;
+    border-color:$btn_plus_background_color;
+    color: $btn_plus_font_color;
+    padding: 12px 18px;
+    :hvoer{
+        background-color:$btn_plus_hover_color;
+        border-color:$btn_plus_hover_color;
+    }
+}
+.btn-outline{
+    &.btn-primary{
+        color:$btn_primary_background_color;
+    }
+    &.btn-danger{
+        color:$btn_danger_background_color;
+    }
+    &.btn-warning{
+        color:$btn_warning_background_color;
+    }
+    &.btn-success{
+        color:$btn_success_background_color;
+    }
+    &.btn-info{
+        color:$btn_info_background_color;
+    }
+}
+.btn-outline{
+    background: transparent;
+    color:#000;
+    &:hover{
+        color:#fff;
+    }
+}
+
+//table
+.table{
+   overflow: auto;
+    &.table-center{
+        tr,th,td{
+            text-align: center;
+        }
+        
+    }
+    &.row-color{
+        tbody{
+            tr{
+                &:nth-child(even) {
+                    background-color: $row_background_color;
+                }
+                &:hover{
+                    background-color: $row_hover_color;
+                }
+            }
+        }
+    }
+    &.full-color{
+            thead{
+                tr{
+                    background-color:$thead_background; 
+                    
+                    th{
+                        color:$th_font_color;
+                    }
+                }
+            }
+            tbody{
+            tr{
+                &:nth-child(even) {
+                    background-color: $row_background_color;
+                }
+                &:hover{
+                    background-color: $row_hover_color;
+                }
+            }
+        }
+        }
+    table{
+        
+        width:100%;
+        thead{
+            tr{
+                border: 1px solid $table_border_color;
+                th{
+                    padding: 8px;
+                    display: table-cell;
+                    text-align: left;
+                    vertical-align: middle;
+                    border-radius: 2px;
+                    font-weight: bold;
+                    border-color: #fff;
+                    border-right: 1px solid $table_border_color;
+                    border-bottom: 2px solid $table_border_color;
+                    min-width: 100px;
+                }
+            }
+        }
+        tbody{
+            tr{
+                border-top:none; 
+                border: 1px solid $table_border_color;
+
+                td{
+                    border-right:1px solid $table_border_color; 
+                    padding: 8px;
+                    min-width: 100px;
+
+                }
+            }
+        }
+    }
+}
+//dropdowns
+.has_dropdown{
+    border: 1px solid #ddd;
+    padding: 15px;
+}
