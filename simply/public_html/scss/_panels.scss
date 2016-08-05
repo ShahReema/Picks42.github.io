@@ -1,0 +1,123 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 5 Aug, 2016, 1:52:11 PM
+    Author     : lucentinnovation
+*/
+
+//panels
+$panel_default_background_color:#ddd;
+$panel_default_font_color:#333;
+$panel_primary_background_color:#337a9e;
+$panel_primary_font_color:#fff;
+$panel_danger_background_color:#f13058;
+$panel_danger_font_color:#fff;
+$panel_warning_background_color:#f5a027;
+$panel_warning_font_color:#fff;
+$panel_success_background_color:#26a69a;
+$panel_success_font_color:#fff;
+$panel_info_background_color:#46b8da;
+$panel_info_font_color:#fff;
+
+//panels
+.panel{
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    will-change: opacity, transform;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+    &:hover{
+        box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18),0 4px 15px 0 rgba(0,0,0,0.15);
+    }
+    .header{
+        cursor: pointer;
+    }
+    &.panel-default{
+        border-color:$panel_default_background_color;
+        .header{
+            background: $panel_default_background_color;
+            color:$panel_default_font_color;
+            p{
+                color:$panel_default_font_color;
+                margin: 0;
+            }
+        }
+    }
+    &.panel-primary{
+        border-color:$panel_primary_background_color;
+        .header{
+            background: $panel_primary_background_color;
+            color:$panel_primary_font_color;
+            p{
+                color:$panel_primary_font_color;
+                margin: 0;
+            }
+        }
+    }
+    &.panel-danger{
+        border-color:$panel_danger_background_color;
+        .header{
+            background: $panel_danger_background_color;
+            color:$panel_danger_font_color;
+            p{
+                color:$panel_danger_font_color;
+                margin: 0;
+            }
+        }
+    }
+    &.panel-warning{
+        border-color:$panel_warning_background_color;
+        .header{
+            background: $panel_warning_background_color;
+            color:$panel_warning_font_color;
+            p{
+                color:$panel_warning_font_color;
+                margin: 0;
+            }
+        }
+    }
+    &.panel-success{
+        border-color:$panel_success_background_color;
+        .header{
+            background: $panel_success_background_color;
+            color:$panel_success_font_color;
+            p{
+                color:$panel_success_font_color;
+                margin: 0;
+            }
+        }
+    }
+    &.panel-info{
+        border-color:$panel_info_background_color;
+        .header{
+            background: $panel_info_background_color;
+            color:$panel_info_font_color;
+            p{
+                color:$panel_info_font_color;
+                margin: 0;
+            }
+        }
+    }
+    .header{
+        padding: 10px 15px;
+        border-bottom: 1px solid transparent;
+
+    }
+    .body{
+        padding: 15px;
+    }
+    .footer{
+        padding: 10px 15px;
+        border-top: 1px solid #ddd;
+        background: #f5f5f5;
+        color: #333;
+    }
+}

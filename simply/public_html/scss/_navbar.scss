@@ -1,0 +1,158 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 5 Aug, 2016, 1:48:59 PM
+    Author     : lucentinnovation
+*/
+
+//navbar
+$navbar_background:#233445;
+$navbar_font_color:#fff;
+$navbar_active: #f05d7c;
+$navbar_hover: #f05d7c;
+$drop_down_color:#325273;
+
+
+//navbar
+nav{
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+    background: $navbar_background;
+    @media(max-width:1024px){
+        position:fixed;
+        width:100%;
+    }
+}
+.nav_fixed{
+    position: fixed;
+    width:100%;
+    z-index: 1;
+}
+.menu_wrapper{
+    @media(min-width:1025px){
+        display:table;
+        width:100%;    
+    }
+    .brand_name{
+        color:$navbar_font_color;
+        @media(min-width:1025px){
+            display: table-cell;
+            width:10%;
+        }
+        @media(max-width:1024px){
+            padding:10px 25px;
+            float:left;
+        }
+        vertical-align: middle;
+        padding:0 15px;
+        text-align: center;
+        img{
+            max-width: 100%;
+            @media(max-width:1024px){
+                max-width:50%;
+            }
+        }
+    }
+    .close_btn{
+        position: relative;
+        float:right;
+        right: 15px;
+        font-size: 50px;
+        color: $navbar_font_color;
+        @media(min-width:1025px){
+            display:none;
+        }
+    }
+    .main_menu{
+        @media(min-width:1025px){
+            width:90%;
+            display:table-cell !important;
+        }
+        @media(max-width:1024px){
+            display: none;
+            padding:0; 
+            clear:both;
+        }
+        vertical-align: middle;
+        padding:0 15px;                       
+        &.menu_right{
+            text-align: right;
+        }
+        &.menu_center{
+            text-align: center;
+        }
+        .main_ul{
+            li{
+                @media(max-width:1024px){
+                    display: list-item;
+                    text-align: left;
+                    margin-left:5px;
+                }
+                position: relative;
+                transition: .5s all;
+                display: inline-block;
+                vertical-align: middle;
+                padding:20px 15px;
+                margin-left:-4px;
+                color:$navbar_font_color;
+                @media(max-width:1240px){
+                    padding:20px 10px;
+                }
+                &.active{
+                    background-color: $navbar_active;
+                }
+                &:hover{
+                    background-color: $navbar_hover;
+                }
+                a{
+                    text-decoration: none;
+                    color:$navbar_font_color;
+                    @media(max-width:1240px){
+                        font-size:12px;
+                    }
+                }
+
+            }
+            .drop_down_hover,.drop_down_click{
+                @media(min-width:1025px){
+                    position: absolute;
+                    width:150px;
+                    margin:0;
+                }
+                margin:10px 0; 
+                top:100%;
+                left:0;
+                width:100%;
+                border: none;
+                background-color: $drop_down_color;
+                height: auto;
+                display: none;
+                text-align:left;
+                li{
+                    padding: 10px;
+                    display: list-item;
+                    margin-left: 0;
+                    a{
+
+                    }
+                }
+            }
+            .has_dropdown{
+                border: none;
+                cursor: pointer;
+
+                i{
+                    text-indent: 5px;
+                }
+                &:hover{
+                    background-color: $navbar_background;
+                }
+                .drop_down_hover,.drop_down_click{
+                    display: none;
+                }
+            }
+        }
+    }
+}
