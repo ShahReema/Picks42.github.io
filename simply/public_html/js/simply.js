@@ -54,6 +54,7 @@ $(document).ready(function () {
 
     $(".menu_wrapper .close_btn").click(function () {
         $(".menu_wrapper .main_menu").slideToggle();
+        $(".nav_fixed").toggleClass("fix_nav_height");
     });
     $(".hover_effect").attr("data-hover", "true");
 

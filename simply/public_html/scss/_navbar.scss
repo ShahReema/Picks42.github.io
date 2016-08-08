@@ -21,15 +21,22 @@ nav{
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
     background: $navbar_background;
     @media(max-width:1024px){
-        position:fixed;
+        position:absolute;
+        top:0;
+        z-index: 9999;
+        overflow: auto;
         width:100%;
     }
 }
 .nav_fixed{
     position: fixed;
     width:100%;
-    z-index: 1;
+    z-index: 9999;
+    &.fix_nav_height{
+        height: 100%;   
+    }
 }
+
 .menu_wrapper{
     @media(min-width:1025px){
         display:table;
@@ -90,12 +97,13 @@ nav{
                     display: list-item;
                     text-align: left;
                     margin-left:0px;
+                    padding:0 !important;
                 }
                 position: relative;
                 transition: .5s all;
                 display: inline-block;
                 vertical-align: middle;
-                padding:20px 15px;
+
                 cursor: pointer;
                 margin-left:-4px;
                 color:$navbar_font_color;
@@ -107,6 +115,13 @@ nav{
                 }
                 &:hover{
                     background-color: $navbar_hover;
+                }
+                >a{
+                    @media(max-width:1024px){
+                        padding:15px 10px;
+                    }
+                    padding:20px 15px;
+                    display:block;    
                 }
                 a{
                     text-decoration: none;
@@ -140,7 +155,10 @@ nav{
                     display: list-item;
                     margin-left: 0;
                     a{
-
+                        @media(max-width:1024px){
+                            padding:10px;
+                        }
+                        padding:0;
                     }
                 }
             }
