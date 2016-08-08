@@ -75,11 +75,24 @@ $(document).ready(function () {
     disable_hover();
 
     //panel dropdown
-    $(".panel.collapse .header").click(function (){
-       $(this).next(".body").stop().slideToggle("fast"); 
-       $(this).parent().find(".footer").stop().slideToggle("fast"); 
+        $(document).on('click',".panel.collapse .header",function (){
+        var main_parent=$(this).parent().parent();
+        var check_accordion=main_parent.hasClass('accordions');
+        var body=$(this).next(".body");
+        var footer=$(this).next().next(".footer");
+        if(check_accordion){
+            main_parent.find(".panel.collapse .body").not(body).slideUp();
+            main_parent.find(".panel.collapse .footer").not(footer).slideUp();
+            panel_collpase(this,body,footer);
+        }
+        else{
+            panel_collpase(this,body,footer);
+        }
     });
-
+    function  panel_collpase(select,target_body,target_footer){
+    target_body.slideToggle("fast"); 
+       target_footer.stop().slideToggle("fast"); 
+}
 
 $(document).on('click',".simply-card .button",function (){
 var obj=$(this).attr("data-target");
@@ -89,7 +102,22 @@ $(this).closest(".simply-card").find(obj).addClass("active");
 $(document).on('click',".simply-card .content .close",function (){
     $(this).parent().removeClass("active");
 });
-
+$(document).on('click',"[data-collapse]",function (){
+    var parent=$(this).parent();
+    var parent_class=parent.hasClass('accordions');
+    var element=$(this).next();
+    if(parent_class){
+       parent.find(".collapse").not(element).slideUp();
+    collapse_action(this);
+    }
+    else{
+        collapse_action(this);
+    }
+});
+        function collapse_action(select){
+            var target= $(select).attr("data-collapse");
+    $(target).stop().slideToggle();
+        }
 //window resize functions
     $(window).resize(function () {
         window.current_window_size = $(window).width();
