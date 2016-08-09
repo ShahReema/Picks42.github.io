@@ -16,10 +16,10 @@ $navbar_hover: #f05d7c;
 $drop_down_color:#325273;
 
 *{
- -webkit-tap-highlight-color:rgba(0,0,0,0);   
- -moz-tap-highlight-color:rgba(0,0,0,0);   
- -o-tap-highlight-color:rgba(0,0,0,0);   
- tap-highlight-color:rgba(0,0,0,0);   
+    -webkit-tap-highlight-color:rgba(0,0,0,0);   
+    -moz-tap-highlight-color:rgba(0,0,0,0);   
+    -o-tap-highlight-color:rgba(0,0,0,0);   
+    tap-highlight-color:rgba(0,0,0,0);   
 }
 .overflow_hidden{
     overflow: hidden;
@@ -28,7 +28,7 @@ $drop_down_color:#325273;
     position: static !important;
 }
 .mainContent{
-       -webkit-transition: 0.35s cubic-bezier(0.46, 0.01, 0.32, 1);
+    -webkit-transition: 0.35s cubic-bezier(0.46, 0.01, 0.32, 1);
     -moz-transition: 0.35s cubic-bezier(0.46, 0.01, 0.32, 1);
     -o-transition: 0.35s cubic-bezier(0.46, 0.01, 0.32, 1);
     -ms-transition: 0.35s cubic-bezier(0.46, 0.01, 0.32, 1);
@@ -67,7 +67,20 @@ nav{
 .menu_wrapper{
     @media(min-width:1025px){
         display:table;
-        width:100%;    
+        width:100%;
+        &.mobile_version{
+            display: block;
+            .brand_name{
+                padding:10px 25px;
+                float:left;
+                img{
+                    max-width:50% !important;
+                } 
+            }
+            .main_menu{
+                display: block;
+            }
+        }
     }
     .brand_name{
         color:$navbar_font_color;
@@ -95,7 +108,7 @@ nav{
         float:right;
         right: 15px;
         font-size: 25px;
-        
+
         padding-top: 13px;
         color: $navbar_font_color;
         @media(min-width:1025px){
@@ -104,7 +117,7 @@ nav{
         }
         @media(max-width:1024px){
             display:block !important;
-            
+
         }
     }
     .main_menu{

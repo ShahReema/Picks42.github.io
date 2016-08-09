@@ -70,6 +70,7 @@ $(document).ready(function () {
         $(".mobile_drawer").toggleClass("active");
         $("body").toggleClass("overflow_hidden");
         $("html").toggleClass("overflow_hidden");
+        
     }
     $(document).on('click', ".menu_wrapper .close_btn", function () {//mobile menu toggle
         mobile_drawer_action();
@@ -91,10 +92,12 @@ $(document).ready(function () {
         {
             $(".close_btn").show();
             $(".menu_wrapper .main_ul").addClass("hide_menu");
+            $(".menu_wrapper").addClass("mobile_version");
         }
         else{
             $(".close_btn").hide();
             $(".menu_wrapper .main_ul").removeClass("hide_menu");
+            $(".menu_wrapper").removeClass("mobile_version");$(".main_menu")
         }
     }
     navbar_change();
