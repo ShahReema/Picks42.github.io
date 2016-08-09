@@ -6,11 +6,9 @@
 
 
 $(document).ready(function () {
-    //add dropdown class to the drop down li
-
-
     window.current_window_size = $(window).width();
-    function dropdown_class_hover() {
+
+    function dropdown_class_hover() {    //add dropdown class to the drop down li
         var select = $(".drop_down_hover");
         var icon = "<i class='fa fa-caret-down' aria-hidden='true'></i>";
         select.parent().addClass("has_dropdown hover_effect");
@@ -37,6 +35,7 @@ $(document).ready(function () {
             $(this).find(".drop_down_hover").stop().show();
         }
     });
+
     $(document).on('mouseleave', ".has_dropdown.hover_effect", function () {
         if (window.current_window_size > 1025)
         {
@@ -52,12 +51,10 @@ $(document).ready(function () {
         var icon = "<i class='fa fa-bars' aria-hidden='true'></i>";
         $(".menu_wrapper .brand_name").after("<div class='close_btn'></div>");
         $(".menu_wrapper .close_btn").append(icon);
-
     }
     nav_close();
 
     function mobile_nav_drawer() {
-
         $("body").prepend("<div class='mobile_drawer'></div>");
         $(".menu_wrapper .main_ul").clone().appendTo(".mobile_drawer");
         $(".mobile_drawer").prepend("<div class='drawer_close'>&times;</div>");
@@ -67,7 +64,8 @@ $(document).ready(function () {
 
     }
     mobile_nav_drawer();
-    function  mobile_drawer_action(){
+
+    function  mobile_drawer_action() {
         $(".mainContent").toggleClass("deactive");
         $(".mobile_drawer").toggleClass("active");
         $("body").toggleClass("overflow_hidden");
@@ -80,6 +78,7 @@ $(document).ready(function () {
         mobile_drawer_action();
     });
     $(".hover_effect").attr("data-hover", "true");
+
     function navbar_change() {//when items are more than parent space, it's turn into mobile menu view
         var sum = 0;
         var main_menu = $(".main_menu").width();
@@ -87,15 +86,19 @@ $(document).ready(function () {
             var width = $(this).width();
             sum = sum + width;
         });
-        sum=parseInt(sum)+30;
+        sum = parseInt(sum) + 30;
         if (main_menu < sum)
         {
             $(".close_btn").show();
-            $(".menu_wrapper .main_ul").hide();
-
+            $(".menu_wrapper .main_ul").addClass("hide_menu");
+        }
+        else{
+            $(".close_btn").hide();
+            $(".menu_wrapper .main_ul").removeClass("hide_menu");
         }
     }
     navbar_change();
+
     //disable hover in touch screen
     function disable_hover() {
 

@@ -102,6 +102,10 @@ nav{
             display:none;
             padding-top: 6px;
         }
+        @media(max-width:1024px){
+            display:block !important;
+            
+        }
     }
     .main_menu{
         @media(min-width:1025px){
@@ -123,6 +127,11 @@ nav{
             text-align: center;
         }
         .main_ul{
+            &.hide_menu{
+                visibility: hidden;
+                z-index: -1;
+                position: absolute;
+            }
             li{
                 @media(max-width:1024px){
                     display: list-item;
