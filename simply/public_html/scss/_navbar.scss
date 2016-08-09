@@ -95,10 +95,12 @@ nav{
         float:right;
         right: 15px;
         font-size: 25px;
+        
         padding-top: 13px;
         color: $navbar_font_color;
         @media(min-width:1025px){
             display:none;
+            padding-top: 6px;
         }
     }
     .main_menu{

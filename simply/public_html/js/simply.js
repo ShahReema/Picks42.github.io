@@ -87,6 +87,7 @@ $(document).ready(function () {
             var width = $(this).width();
             sum = sum + width;
         });
+        sum=parseInt(sum)+30;
         if (main_menu < sum)
         {
             $(".close_btn").show();
